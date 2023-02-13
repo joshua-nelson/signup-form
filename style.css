@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,10 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
    
 }
 ol, ul {
@@ -52,48 +53,115 @@ table {
 	border-spacing: 0;
 }
 
+body, html {
+    min-height: 100vh;
+   
+}
 
 .container {
-    height: 1000px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    
+}
+
+.container > * {
+    min-height: 100vh;
 
 }
 
-.left-container {
-    background-image: url('https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
-    display:flex;
-    background-position: 80%;
-    flex-direction: column;
+.column-one{
+    background: url('https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80') right no-repeat;
 }
 
-.logo-container {
-    margin-top: 120px;
-    color: white;
-    padding-left: 50px; 
+.column-two{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+   
 }
 
-.logo-container > p {
-    font-size: 40px;
+.form-container {
+    height: 50%;
+    padding: 4rem;
+   
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
-.right-container {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+.cta {
+    font-size: 42px;
+    padding-bottom: 50px;
 }
 
-.form-cta {
-   padding: 50px;
-   font-size: 28px;
+form{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto 1fr 1fr;
+
 }
 
-form {
-    display: flex;
+form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-form > * {
+
+form div:first-child {
+    grid-row:  1;
+    grid-column: span 2;
+    padding: 20px 0;
+
+}
+
+form div  > *{
     display: block;
+ 
 }
 
+form input {
+    margin-bottom: 1.5rem;
+    padding: .6rem;
+    width: 60%;
+    border: 1px solid #e5e7eb;
+    border-radius: .2rem;
+}
+
+form div input:not([type='button']):focus {
+    outline: 1px solid blue;
+}
+
+form div label {
+    margin-bottom: 5px;
+}
+
+form div:nth-child(3), form div:nth-child(2) {
+    grid-row: 2;
+}
+
+form input[type='button'] {
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: #596D48 ;
+    font-weight: bold;
+    font-size: 18px;
+    width: 55%;
+    color: white;
+    
+}
+
+
+
+form label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .8rem;
+}
+
+form p > a {
+    text-decoration: none;
+    color: #596D48;
+    font-weight: bold;
+}
