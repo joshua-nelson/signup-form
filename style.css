@@ -151,6 +151,25 @@ form div input:not([type='button']):focus {
     outline: 1px solid blue;
 }
 
+.valid {
+    outline: 1px solid green;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.password-warning {
+    font-size: 10px;
+    color: red;
+}
+
+
+.hidden {
+    display: none;
+   
+}
+
 form div label {
     margin-bottom: 5px;
 }
